@@ -16,6 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AlarmListActivity" />
+        <activity android:name=".AlarmDetail" />
+        <activity android:name=".AlarmDetailActivity" />
+        <activity android:name=".AlarmSoundActivity" />
+        <activity android:name=".SoundMenuActivity" />
+        <activity android:name=".SoundFromRecodeActivity" />
+        <activity android:name=".SoundFromPCActivity" />
+        <activity android:name=".SoundFromServerActivity" />
+        <activity android:name=".SoundFromYoutubeActivity" />
+        <activity android:name=".AlarmPlayActivity"></activity>
     </application>
 
 </manifest>
