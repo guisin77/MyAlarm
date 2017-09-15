@@ -8,12 +8,14 @@
     tools:context="com.yang.myalarm.AlarmDetailActivity">
 
     <TextClock
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="36sp" />
 
     <LinearLayout
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -23,50 +25,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="월"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
         <CheckBox
             android:id="@+id/onTue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="화"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
         <CheckBox
             android:id="@+id/onWed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="수"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
         <CheckBox
             android:id="@+id/onThr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="목"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
         <CheckBox
             android:id="@+id/onFri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="금"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
         <CheckBox
             android:id="@+id/onSat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="토"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
         <CheckBox
             android:id="@+id/chkMon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="일"
-            android:textSize="36sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
 
     <Button
+        android:id="@+id/btnAlarmSound"
+        android:layout_margin="20dp"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Song 1"
-        android:textSize="36sp" />
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnAlarmAdd"
+        android:layout_margin="20dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="알람등록"
+        android:textSize="20sp" />
 </LinearLayout>
