@@ -21,7 +21,7 @@
         <activity android:name=".AlarmDetailActivity" />
         <activity android:name=".AlarmSoundActivity" />
         <activity android:name=".SoundMenuActivity" />
-        <activity android:name=".SoundFromRecodeActivity" />
+        <activity android:name=".SoundFromRecordActivity" />
         <activity android:name=".SoundFromPCActivity" />
         <activity android:name=".SoundFromServerActivity" />
         <activity android:name=".SoundFromYoutubeActivity" />

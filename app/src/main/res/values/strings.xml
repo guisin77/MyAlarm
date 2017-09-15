@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MyAlarm</string>
+    <string name="txt_default_time">06:30</string>
+    <string name="btn_alarm_stop">STOP</string>
+    <string name="btn_from_record">녹음하기</string>
+    <string name="btn_from_pc">PC에서 다운로드</string>
+    <string name="btn_from_server">서버에서 다운로드</string>
+    <string name="btn_from_youtube">Youtube 다운로드</string>
+    <string name="msg_from_server">서버에서 다운받습니다</string>
+    <string name="msg_from_pc">PC에서 다운받습니다</string>
 </resources>
