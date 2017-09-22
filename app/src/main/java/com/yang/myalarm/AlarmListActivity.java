@@ -13,6 +13,7 @@ public class AlarmListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_alarm_list);
 
         btnAddAlarm  = (Button)findViewById(R.id.btnAddAlarm);
@@ -24,5 +25,6 @@ public class AlarmListActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

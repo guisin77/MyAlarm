@@ -11,12 +11,22 @@
     <TimePicker
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></TimePicker>
+        android:headerBackground="@color/colorPrimary"
+        android:numbersSelectorColor="@color/colorPrimaryDark"></TimePicker>
 
     <Button
+        android:id="@+id/btnStop"
         android:layout_margin="20dp"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_alarm_stop" />
+
+    <Button
+        android:id="@+id/btnAlarmList"
+        android:layout_margin="20dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="알람목록" />
 </LinearLayout>
