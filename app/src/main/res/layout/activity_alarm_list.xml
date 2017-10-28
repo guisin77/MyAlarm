@@ -7,12 +7,14 @@
     android:orientation="vertical"
     tools:context="com.yang.myalarm.AlarmListActivity">
 
-    <Button
-        android:layout_margin="20dp"
+    <ImageButton
         android:id="@+id/btnAddAlarm"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/plus01"
+        android:baselineAlignBottom="true"
         android:text="알람추가" />
 
  <ListView
@@ -33,10 +35,20 @@
                     android:checked="true"
                     />
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:text="AM 06:30 월/화/수/목/금"
                     />
+                <ImageButton
+                    android:id="@+id/btnPlayThumb"
+                    android:src="@drawable/play_thumb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageButton
+                    android:id="@+id/btnStopThumb"
+                    android:src="@drawable/stop_thumb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
                 android:layout_margin="10dp"
@@ -50,10 +62,20 @@
                     android:checked="true"
                     />
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:text="AM 08:00 토/일"
                     />
+                <ImageButton
+                    android:id="@+id/btnPlayThumb2"
+                    android:src="@drawable/play_thumb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageButton
+                    android:id="@+id/btnStopThumb2"
+                    android:src="@drawable/stop_thumb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
 </LinearLayout>

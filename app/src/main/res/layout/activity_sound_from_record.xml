@@ -10,7 +10,33 @@
     <ImageView
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="50dp"
+        android:layout_height="800px"
+        android:layout_margin="100dp"
         android:src="@drawable/microphone" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnRecord"
+            android:text="Record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnStop"
+            android:text="Stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnPlay"
+            android:text="Play"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
 </LinearLayout>
