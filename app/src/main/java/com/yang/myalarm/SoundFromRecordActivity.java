@@ -3,6 +3,7 @@ package com.yang.myalarm;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +16,8 @@ public class SoundFromRecordActivity extends AppCompatActivity {
     private MediaPlayer player ;
     private MediaRecorder recorder;
     private int playbackPosition = 0;
-    String RECORDED_FILE = "/sdcard/tmpsound.mp4" ;
+    //String RECORDED_FILE = "/sdcard/tmpsound.mp4" ;
+    String RECORDED_FILE = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_ALARMS) + "/tmpsound.mp4" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class SoundFromRecordActivity extends AppCompatActivity {
                     recorder = null;
                 }
 
+                Log.d("AAA", RECORDED_FILE );
                 recorder = new MediaRecorder();
 
                 recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
