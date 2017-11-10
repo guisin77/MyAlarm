@@ -1,6 +1,7 @@
 package com.yang.myalarm;
 
 import android.media.MediaPlayer;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,6 +20,7 @@ public class MediaCommon {
     private MediaPlayer player ;
 
     private static final String ALARM_FILE_PATH =  "/sdcard/alarmList.txt";
+    private static final String SOUND_FILE_PATH =  "/sdcard/soundList.txt";
 
     public void playSound(String soundFile ) throws Exception {
         killMediaPlay();
@@ -42,9 +44,9 @@ public class MediaCommon {
     public void setAlarmList(String[] data2) {
         BufferedWriter bw = null;
         String data[] = {
-          "MMDD0630,1111100,001@"
-       ,  "MMDD0900,0000011,001@"
-       ,  "MMDD2100,1111111,001@" };
+          "MMDD1942,1111100,001@"
+       ,  "MMDD1946,0000011,001@"
+       ,  "MMDD1947,1111111,001@" };
 
         try {
             //쓸 파일
@@ -70,7 +72,7 @@ public class MediaCommon {
         BufferedReader br = null;
         String  alarmList =null;
 
-       // setAlarmList(null);
+        setAlarmList(null);
 
         try {
             //읽을 파일
@@ -81,8 +83,6 @@ public class MediaCommon {
             int i=0;
             while ((line = br.readLine()) != null) {
                 alarmList = line;
-                //읽을 한 줄을 ,로 구분하여 스트링 배열로 리턴
-  //              String[] texts = line.split(",");
                 i++;
             }
         } catch (Exception e) {
@@ -95,4 +95,66 @@ public class MediaCommon {
         }
         return alarmList;
     }
+
+
+
+    public void setSoundList(String data2) {
+        BufferedWriter bw = null;
+
+        Log.d("AAA",">>> " + data2);
+        try {
+            //쓸 파일
+            File writeFile = new File(SOUND_FILE_PATH);
+            if (!writeFile.exists()) {
+                writeFile.createNewFile();
+            }
+            bw = new BufferedWriter(new FileWriter(writeFile));
+
+           if(data2!=null) {
+               String asis = getSoundList()  ;
+               if ( asis!=null ) bw.write( asis + data2);
+               else  bw.write (data2);
+               Log.d("AAA", "write +++ " + data2);
+           }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (bw != null) bw.close();
+            } catch (Exception ignore) {
+            }
+        }
+    }
+
+
+
+
+    public String  getSoundList() {
+        BufferedReader br = null;
+        String  soundList =null;
+
+        //setSoundList(null);
+
+        try {
+            //읽을 파일
+            File readFile = new File(SOUND_FILE_PATH);
+            br = new BufferedReader(new FileReader(readFile));
+
+            String line = "";
+            int i=0;
+            while ((line = br.readLine()) != null) {
+                soundList = line;
+                i++;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) br.close();
+            } catch (Exception ignore) {
+            }
+        }
+        return soundList;
+    }
+
 }

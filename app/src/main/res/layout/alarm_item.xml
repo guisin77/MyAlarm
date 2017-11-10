@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alarmItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="time"
+            />
+        <TextView
+            android:id="@+id/txtWeek"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="weeks"
+            />
+        <TextView
+            android:id="@+id/txtSound"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="sound"
+            />
+        <ImageButton
+            android:id="@+id/btnPlayThumb2"
+            android:src="@drawable/play_thumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/btnStopThumb2"
+            android:src="@drawable/stop_thumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>

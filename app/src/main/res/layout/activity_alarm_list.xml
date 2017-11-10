@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/alarmList"
     tools:context="com.yang.myalarm.AlarmListActivity">
 
     <ImageButton
@@ -17,65 +18,13 @@
         android:baselineAlignBottom="true"
         android:text="알람추가" />
 
- <ListView
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content">
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
- </ListView>
 
-            <LinearLayout
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    />
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:text="AM 06:30 월/화/수/목/금"
-                    />
-                <ImageButton
-                    android:id="@+id/btnPlayThumb"
-                    android:src="@drawable/play_thumb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <ImageButton
-                    android:id="@+id/btnStopThumb"
-                    android:src="@drawable/stop_thumb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    />
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:text="AM 08:00 토/일"
-                    />
-                <ImageButton
-                    android:id="@+id/btnPlayThumb2"
-                    android:src="@drawable/play_thumb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <ImageButton
-                    android:id="@+id/btnStopThumb2"
-                    android:src="@drawable/stop_thumb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+
+
 
 </LinearLayout>

@@ -11,6 +11,8 @@ import android.util.Log;
 
 import java.util.Calendar;
 
+import static android.app.AlarmManager.INTERVAL_DAY;
+
 public class MyAlarmService extends Service {
 
 
@@ -74,20 +76,46 @@ public class MyAlarmService extends Service {
                 alarmMgr.cancel(alarmIntent);
             }
 
-            // Set the alarm to start at 8:30 a.m.
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(System.currentTimeMillis());
-            calendar.set(Calendar.HOUR_OF_DAY, 13);
-            calendar.set(Calendar.MINUTE, 42);
 
-//        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-//                AlarmManager.INTERVAL_DAY, alarmIntent);
+            ////// 알람 목록   ////////////////////////////////////////
 
-            //1분
-            alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                    1 * 60 * 1000 , alarmIntent);
+            String  alarmList = new MediaCommon().getAlarmList();
+            String[] alarms  = alarmList.split("@");
 
+            for(int i=0;i< alarms.length ; i++) {
+             //   Toast.makeText(this, alarms[i], Toast.LENGTH_LONG).show();
+                String tmp = alarms[i];
+             //   "MMDD0630,1111100,001@"
+//                 Log.d("AAA" , "tmp                ::" + tmp               );
+//                 Log.d("AAA" , "tmp.substring(0,1) ::" + tmp.substring(0,2)); // MM
+//                 Log.d("AAA" , "tmp.substring(2,4) ::" + tmp.substring(2,4)); // DD
+//                 Log.d("AAA" , "tmp.substring(4,8) ::" + tmp.substring(4,8)); // 0630 time
+//                 Log.d("AAA" , "tmp.substring(9,16) ::" + tmp.substring(9,16)); // 1111100 weeks
+//                 Log.d("AAA" , "tmp.substring(17,20) ::" + tmp.substring(17,20)); // 001 sound
 
+                int HOUR_OF_DAY = Integer.parseInt(  tmp.substring(4,6) ) ;
+                int MINUTE      = Integer.parseInt(  tmp.substring(6,8) ) ;
+                char weeks[]   = tmp.substring(9,16).toCharArray();
+
+                ///////////////////////////////////////////////////////
+                // Set the alarm to start at 8:30 a.m.
+                Calendar calendar = Calendar.getInstance();
+                long NOW = System.currentTimeMillis();
+                calendar.setTimeInMillis(NOW);
+
+                calendar.set(Calendar.HOUR_OF_DAY, HOUR_OF_DAY);
+                calendar.set(Calendar.MINUTE, MINUTE);
+
+                for(int j=0 ; j<= 6 ; j++ ) {
+                    if ( weeks[j] == '1' ) {
+                        calendar.setTimeInMillis(NOW);
+                        calendar.add(Calendar.DATE, ( j+1 - calendar.DAY_OF_WEEK + 7) % 7  );
+                        // weekly
+                        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                                7 * INTERVAL_DAY , alarmIntent);
+                    }
+                }
+            }
         }
         else if("play".equals(action)) {
             String soundFile = intent.getStringExtra("soundFile");

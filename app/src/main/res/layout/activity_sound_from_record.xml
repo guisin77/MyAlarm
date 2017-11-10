@@ -15,27 +15,55 @@
         android:src="@drawable/microphone" />
 
     <android.support.v7.widget.LinearLayoutCompat
-        android:orientation="horizontal"
-        android:layout_gravity="center"
+        android:id="@+id/linearLayoutCompat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/voiceFile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="tmpsound"
+            android:textSize="24sp" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
         <Button
             android:id="@+id/btnRecord"
-            android:text="Record"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_height="wrap_content"
+            android:layout_margin="10px"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:background="@color/colorPrimaryDark"
+            android:text="Record" />
         <Button
             android:id="@+id/btnStop"
             android:text="Stop"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_weight="1"
+            android:layout_margin="10px"
             android:layout_width="wrap_content"
+            android:background="@color/colorPrimaryDark"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnPlay"
             android:text="Play"
-
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_weight="1"
+            android:layout_margin="10px"
             android:layout_width="wrap_content"
+            android:background="@color/colorPrimaryDark"
             android:layout_height="wrap_content" />
-
 
     </android.support.v7.widget.LinearLayoutCompat>
 

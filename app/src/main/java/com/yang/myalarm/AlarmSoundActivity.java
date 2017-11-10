@@ -15,6 +15,23 @@ public class AlarmSoundActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_sound);
 
+        /*
+        TextView tv =  ((TextView)findViewById(R.id.alarmListView)) ;
+
+        String  soundList = new MediaCommon().getSoundList();
+
+        tv.append("tmpfile.mp4");
+
+        if (soundList!=null) {
+            String[] sounds;
+            sounds =  soundList.split("@");
+
+            for (int i = 0; i < sounds.length; i++) {
+                tv.append(sounds[i]);
+            }
+        }
+        */
+
         btnAddSound  = (Button)findViewById(R.id.btnAddSound);
 
         btnAddSound.setOnClickListener(new View.OnClickListener() {

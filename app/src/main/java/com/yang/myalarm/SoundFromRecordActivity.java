@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SoundFromRecordActivity extends AppCompatActivity {
@@ -17,7 +18,8 @@ public class SoundFromRecordActivity extends AppCompatActivity {
     private MediaRecorder recorder;
     private int playbackPosition = 0;
     //String RECORDED_FILE = "/sdcard/tmpsound.mp4" ;
-    String RECORDED_FILE = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_ALARMS) + "/tmpsound.mp4" ;
+    private String newFile = "tmpsound" ;
+    String RECORDED_FILE = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_ALARMS) + "/"+ newFile +".mp4" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class SoundFromRecordActivity extends AppCompatActivity {
                     recorder = null;
                 }
 
+                newFile = ((TextView) findViewById(R.id.voiceFile)).getText().toString();
                 Log.d("AAA", RECORDED_FILE );
                 recorder = new MediaRecorder();
 
@@ -52,6 +55,7 @@ public class SoundFromRecordActivity extends AppCompatActivity {
                     Log.d("AAA" , "Record start");
                     Toast.makeText(SoundFromRecordActivity.this, "Record", Toast.LENGTH_LONG).show();
 
+                    new MediaCommon().setSoundList( newFile +".mp4"  +"@");
 
                 } catch (Exception e) {
                     e.printStackTrace();
