@@ -112,7 +112,7 @@ public class SoundFromRecordActivity extends AppCompatActivity {
         });
 
 
-
+        //finish();
     }
 
     private void playSound(String soundFile ) throws Exception {

@@ -11,8 +11,6 @@ import android.util.Log;
 
 import java.util.Calendar;
 
-import static android.app.AlarmManager.INTERVAL_DAY;
-
 public class MyAlarmService extends Service {
 
 
@@ -106,15 +104,28 @@ public class MyAlarmService extends Service {
                 calendar.set(Calendar.HOUR_OF_DAY, HOUR_OF_DAY);
                 calendar.set(Calendar.MINUTE, MINUTE);
 
+                alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                        AlarmManager.INTERVAL_DAY, alarmIntent);
+
+                //-----------------------------------------------------------
+                /*
+                // 반복
                 for(int j=0 ; j<= 6 ; j++ ) {
                     if ( weeks[j] == '1' ) {
                         calendar.setTimeInMillis(NOW);
                         calendar.add(Calendar.DATE, ( j+1 - calendar.DAY_OF_WEEK + 7) % 7  );
                         // weekly
+                        Log.d("AAA" , "Alarm ADD ::: " + calendar.toString());
+                        Log.d("AAA" , "Alarm ADD ::: " + calendar.getTimeInMillis());
+
+
                         alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                                 7 * INTERVAL_DAY , alarmIntent);
                     }
                 }
+                */
+                //------------------------------------------------------------------------
+
             }
         }
         else if("play".equals(action)) {

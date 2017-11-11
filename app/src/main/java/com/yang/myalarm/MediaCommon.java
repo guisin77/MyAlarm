@@ -1,7 +1,6 @@
 package com.yang.myalarm;
 
 import android.media.MediaPlayer;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -41,24 +40,33 @@ public class MediaCommon {
         }
     }
 
-    public void setAlarmList(String[] data2) {
+    public void setAlarmList(String  newAlarm) {
         BufferedWriter bw = null;
         String data[] = {
-          "MMDD1942,1111100,001@"
-       ,  "MMDD1946,0000011,001@"
-       ,  "MMDD1947,1111111,001@" };
+          "MMDD1900,1111100,001@"
+       ,  "MMDD1800,0000011,001@"
+       ,  "MMDD1700,1111111,001@" };
 
         try {
             //쓸 파일
             File writeFile = new File(ALARM_FILE_PATH);
             if (!writeFile.exists()) writeFile.createNewFile();
-            bw = new BufferedWriter(new FileWriter(writeFile));
 
+            bw = new BufferedWriter(new FileWriter(writeFile, true));
+/*
             for (int i = 0; i < data.length ;i++){
                 bw.write(data[i]);
                // bw.newLine();
             }
+*/
+           // bw.write(getAlarmList());
+
+            if(newAlarm!=null) {
+                      bw.append(newAlarm);
+            }
         } catch (Exception e) {
+
+
             e.printStackTrace();
         } finally {
             try {
@@ -72,7 +80,7 @@ public class MediaCommon {
         BufferedReader br = null;
         String  alarmList =null;
 
-        setAlarmList(null);
+       // setAlarmList(null);
 
         try {
             //읽을 파일
@@ -93,29 +101,29 @@ public class MediaCommon {
             } catch (Exception ignore) {
             }
         }
+
+        if(alarmList==null) alarmList ="";
+
         return alarmList;
     }
 
 
+ //-----------------------------------------------------------
 
-    public void setSoundList(String data2) {
+    public void setSoundList(String  newSound) {
         BufferedWriter bw = null;
 
-        Log.d("AAA",">>> " + data2);
         try {
             //쓸 파일
             File writeFile = new File(SOUND_FILE_PATH);
-            if (!writeFile.exists()) {
-                writeFile.createNewFile();
-            }
-            bw = new BufferedWriter(new FileWriter(writeFile));
+            if (!writeFile.exists()) writeFile.createNewFile();
+            bw = new BufferedWriter(new FileWriter(writeFile, true));
 
-           if(data2!=null) {
-               String asis = getSoundList()  ;
-               if ( asis!=null ) bw.write( asis + data2);
-               else  bw.write (data2);
-               Log.d("AAA", "write +++ " + data2);
-           }
+            //bw.write(getSoundList());
+
+            if(newSound!=null) {
+                bw.append(newSound);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -126,14 +134,10 @@ public class MediaCommon {
         }
     }
 
-
-
-
     public String  getSoundList() {
         BufferedReader br = null;
-        String  soundList =null;
+        String  alarmList =null;
 
-        //setSoundList(null);
 
         try {
             //읽을 파일
@@ -143,7 +147,7 @@ public class MediaCommon {
             String line = "";
             int i=0;
             while ((line = br.readLine()) != null) {
-                soundList = line;
+                alarmList = line;
                 i++;
             }
         } catch (Exception e) {
@@ -154,7 +158,8 @@ public class MediaCommon {
             } catch (Exception ignore) {
             }
         }
-        return soundList;
+        if(alarmList==null) alarmList ="";
+        return alarmList;
     }
 
 }

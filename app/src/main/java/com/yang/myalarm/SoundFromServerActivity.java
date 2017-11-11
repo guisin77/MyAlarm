@@ -57,7 +57,7 @@ public class SoundFromServerActivity extends AppCompatActivity {
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         SoundFromServerActivity.this, android.R.layout.simple_list_item_1, strings);
-                ListView listView = (ListView)findViewById(R.id.listview);
+                ListView listView = (ListView)findViewById(R.id.listview_server);
                 listView.setAdapter (adapter);
 
             } catch (Exception e) {

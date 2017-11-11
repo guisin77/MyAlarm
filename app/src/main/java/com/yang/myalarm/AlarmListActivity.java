@@ -49,7 +49,6 @@ public class AlarmListActivity extends AppCompatActivity {
 
         //////////////////////////////////////////////////////////
 
-
         ListView listview ;
         AlarmListViewAdapter adapter;
 
@@ -93,11 +92,9 @@ public class AlarmListActivity extends AppCompatActivity {
             if(weeks[5]=='1')  alarmWeeks +="토 ";
             if(weeks[6]=='1')  alarmWeeks +="일 ";
 
-
             String soundFile = tmp.substring(17,20);
 
             adapter.addItem(tmp.substring(4,6) + ":" + tmp.substring(6,8), alarmWeeks, soundFile) ;
-
         }
 
      //////////////////////////////////////////////////////////////////////////

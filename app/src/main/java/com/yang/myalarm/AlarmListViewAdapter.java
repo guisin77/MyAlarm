@@ -60,15 +60,6 @@ public class AlarmListViewAdapter extends BaseAdapter {
         soundTextView.setText(alarmListViewItem.getAlarmSound());
 
 
-
-        // button1 클릭 시 TextView(textView1)의 내용 변경.
-//    Button button1 = (Button) convertView.findViewById(R.id.button1);
-//        button1.setOnClickListener(new Button.OnClickListener() {
-//        public void onClick(View v) {
-//            textTextView.setText(Integer.toString(pos + 1) + "번 아이템 선택.");
-//        }
-//    });
-
         final MediaCommon media2 = new MediaCommon();;
         final String RECORDED_FILE = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_ALARMS) + "/tmpsound.mp4" ;
 
@@ -88,8 +79,6 @@ public class AlarmListViewAdapter extends BaseAdapter {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-
-
             }
         });
 

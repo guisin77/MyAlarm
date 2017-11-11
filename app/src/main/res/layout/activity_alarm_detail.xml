@@ -7,13 +7,14 @@
     android:orientation="vertical"
     tools:context="com.yang.myalarm.AlarmDetailActivity">
 
-    <TextClock
-        android:layout_margin="20dp"
-        android:layout_width="match_parent"
+
+    <TimePicker
+        android:layout_margin="120px"
+        android:id="@+id/timePicker1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="36sp" />
+        android:timePickerMode="spinner" />
+
 
     <LinearLayout
         android:layout_margin="20dp"

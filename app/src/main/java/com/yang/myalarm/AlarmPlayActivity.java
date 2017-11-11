@@ -26,6 +26,10 @@ public class AlarmPlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(AlarmPlayActivity.this, "Stop!!!!", Toast.LENGTH_LONG).show();;
 
+                Intent intent = new Intent (AlarmPlayActivity.this, MyAlarmService.class);
+                intent.putExtra("action" , "stop");
+                startService(intent);
+
             }
         });
 

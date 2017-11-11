@@ -16,17 +16,19 @@
 
     <Button
         android:id="@+id/btnStop"
-        android:layout_margin="20dp"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_alarm_stop" />
+        android:layout_margin="20dp"
+        android:text="@string/btn_alarm_stop"
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/btnAlarmList"
-        android:layout_margin="20dp"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="알람목록" />
+        android:layout_margin="20dp"
+        android:text="알람목록"
+        android:textSize="20sp" />
 </LinearLayout>

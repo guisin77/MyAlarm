@@ -12,10 +12,10 @@
 
         <TextView
             android:id="@+id/txtTime"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="time"
-            />
+            android:textSize="40sp" />
         <TextView
             android:id="@+id/txtWeek"
             android:layout_width="100dp"
@@ -33,10 +33,12 @@
             android:src="@drawable/play_thumb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <!--
         <ImageButton
             android:id="@+id/btnStopThumb2"
             android:src="@drawable/stop_thumb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+            -->
 
 </LinearLayout>

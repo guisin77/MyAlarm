@@ -16,14 +16,10 @@
         android:textColor="@color/colorPrimaryDark"
         android:text="사운드 만들기" />
 
-    <TextView
-        android:id="@+id/alarmListView"
-        android:layout_width="match_parent"
-        android:text="tmpFile.mp4"
-        android:textSize="50px"
-        android:layout_height="200px" />
+
     <ListView
-        android:id="@+id/listview2"
+        android:layout_margin="30px"
+        android:id="@+id/listview_sound"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
